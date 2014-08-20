@@ -1,23 +1,24 @@
 library(gatter) {
-  cell(NOT) {
+  cell(NAND2) {
     area: 3;
     pin(A) { direction: input; }
+    pin(B) { direction: input; }
     pin(Y) { direction: output;
-              function: "A'"; }
+              function: "(A*B)'"; }
   }
-  cell(NAND) {
+  cell(NAND3) {
     area: 4;
     pin(A) { direction: input; }
     pin(B) { direction: input; }
+    pin(C) { direction: input; }
     pin(Y) { direction: output;
-             function: "(A*B)'"; }
+             function: "(A*B*C)'"; }
   }
-  cell(NOR) {
+  cell(NOT) {
     area: 4;
     pin(A) { direction: input; }
-    pin(B) { direction: input; }
     pin(Y) { direction: output;
-             function: "(A+B)'"; }
+             function: "A'"; }
   }
   cell(DFF) {
     area: 18;
