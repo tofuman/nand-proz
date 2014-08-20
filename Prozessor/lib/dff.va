@@ -1,0 +1,5 @@
+module DFF (D, Q, C);
+input wire D,C;
+output wire Q;
+
+endmodule

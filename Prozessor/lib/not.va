@@ -1,0 +1,5 @@
+module NOT (A, Y);
+input A;
+output Y;
+
+endmodule

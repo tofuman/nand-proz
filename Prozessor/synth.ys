@@ -1,0 +1,27 @@
+# read design
+read_verilog ALU.v
+hierarchy -check
+
+# high-level synthesis
+proc; opt; memory; opt; fsm; opt
+
+# low-level synthesis
+techmap; opt
+
+
+# map to target architecture
+dfflibmap -liberty gatter.lib
+
+abc -liberty gatter.lib 
+
+
+
+# split larger signals
+splitnets -ports; opt
+
+write_verilog out.v
+write_spice out.spi
+
+#anzeige
+show -stretch -colors 120 -lib ./lib/nand.va -lib ./lib/not.va -lib ./lib/nor.va -lib ./lib/dff.va 
+stat
