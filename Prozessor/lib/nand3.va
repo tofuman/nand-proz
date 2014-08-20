@@ -1,0 +1,5 @@
+module NAND3 (A, B, C, Y);
+input wire A,B,C;
+output wire Y;
+
+endmodule

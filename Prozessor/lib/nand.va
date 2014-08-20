@@ -1,5 +1,0 @@
-module NAND (A, B, Y);
-input wire A,B;
-output wire Y;
-
-endmodule

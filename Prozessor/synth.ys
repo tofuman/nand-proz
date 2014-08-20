@@ -23,5 +23,5 @@ write_verilog out.v
 write_spice out.spi
 
 #anzeige
-show -stretch -colors 120 -lib ./lib/nand.va -lib ./lib/not.va -lib ./lib/nor.va -lib ./lib/dff.va 
+show -stretch -colors 120 -lib ./lib/nand2.va -lib ./lib/nand3.va -lib ./lib/not.va -lib ./lib/nor.va -lib ./lib/dff.va
 stat
