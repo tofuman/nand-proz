@@ -1,6 +1,8 @@
 # read design
 read_verilog Processor.v ALU.v RegisterBank.v 
-#Steuerwerk.v
+#read_verilog Steuerwerk.v
+#read_verilog ALU.v
+#read_verilog RegisterBank.v
 hierarchy -check
 
 # high-level synthesis

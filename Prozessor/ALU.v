@@ -10,7 +10,7 @@ begin
 	case (control)
 		2'b00000 :begin
 				o = a1 + a2;
-				control[0] = a1[7] & a2[7];	
+				status[0] = a1[7] & a2[7];	
 			end
 		2'b00001 : o = a1 - a2;
 		2'b00010 : o = a1 | a2;
@@ -25,8 +25,8 @@ begin
                 2'b01011 : o = a2;
                 2'b01100 : o = 2'b00000000;
                 2'b01101 : o = 2'b00000000;
-		2'b01111 : o = a2 + a1 +control[0];
-		2'b01111 : o = a2 - a1 - control[0];
+		2'b01111 : o = a2 + a1 + status[0];
+		2'b01111 : o = a2 - a1 - status[0];
 		default : o = 2'b00000000;
 	endcase
 

@@ -1,5 +1,5 @@
-module processor (enable);
-input wire enable;
+module processor (clk);
+input wire clk;
 wire [7:0] data1,data2,datadest;
 wire control;
 
@@ -14,7 +14,7 @@ regbank regb (
 	.data2		(data2), 
 	.datadest	(datadest), 
 	.control	(control), 
-	.enable		(enable)
+	.enable		(clk)
 );
 
                                                                                                                             
@@ -24,6 +24,16 @@ alu alu1 (
 	.o, 
 	.status, 
 	.control, 
-	.enable 	(enable)
+	.enable 	(clk)
 );
 
+
+steuerwerk str (
+	.addr1		(addr1),
+	.addr2		(addr2), 
+	.addrdest	(addrdest),
+	.control	(control),
+	.status, 
+	.instructionbus,
+	.clk		(clk)
+);
