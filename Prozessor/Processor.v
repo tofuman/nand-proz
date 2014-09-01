@@ -27,10 +27,20 @@ alu alu1 (
 	.enable 	(clk)
 );
 
+memman mem (
+	.addr, 
+	.word, 
+	.clk, 
+	.dataIsPresent, 
+	.rnw, 
+	.enable, 
+	.addrMem, 
+	.wordMem
+);
+
 
 steuerwerk str (
 	.addr1		(addr1),
-	.addr2		(addr2), 
 	.addrdest	(addrdest),
 	.control	(control),
 	.status, 
